@@ -1,5 +1,8 @@
 import asyncio
 from agents import Agent, Runner
+from dotenv import load_dotenv
+
+load_dotenv()
 
 history_agent = Agent(
     name="History tutor",
@@ -25,8 +28,6 @@ async def main() -> None:
         # For demonstration, we'll use the history agent
         result = await Runner.run(history_agent, user_input)
         print(f"Agent: {result.final_output}\n")
-
-
 
 
 if __name__ == "__main__":

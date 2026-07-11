@@ -10,13 +10,13 @@ history_agent = Agent(
 math_agent = Agent(
     name="Math tutor",
     instructions="You answer math questions clearly and concisely.",
-    model="gpt-4o",
+    model="gpt-5.5",
 )
 
 spanish_agent = Agent(
     name="Spanish tutor",
     instructions="You are an expert in the Spanish language. Translate all English text to Spanish.",
-    model="gpt-4o",
+    model="gpt-4o-mini",
 )
 
 
