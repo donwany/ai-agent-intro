@@ -22,7 +22,7 @@ async def main() -> None:
             break
 
         # You can choose which agent to use based on the user's input or context
-        # For demonstration, we'll use the Spanish agent for translation
+        # For demonstration, we'll use the history agent
         result = await Runner.run(history_agent, user_input)
         print(f"Agent: {result.final_output}\n")
 
