@@ -22,10 +22,13 @@ spanish_agent = Agent(
 
 async def main() -> None:
     result = await Runner.run(spanish_agent, "My name is John. How are you?")
+    print(f"Agent: {result.final_output}\n")
+
+    result = await Runner.run(math_agent, "What is the derivative of x^2?")
     print(result.final_output)
 
-    #result = await Runner.run(math_agent, "What is the derivative of x^2?")
-    # print(result.final_output)
+    result = await Runner.run(history_agent, "Who was the first president of the United States?")
+    print(result.final_output)
 
 
 if __name__ == "__main__":
