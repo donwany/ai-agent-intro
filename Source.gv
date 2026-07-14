@@ -1,0 +1,12 @@
+
+    digraph G {
+        graph [splines=true];
+        node [fontname="Arial"];
+        edge [penwidth=1.5];
+    "__start__" [label="__start__", shape=ellipse, style=filled, fillcolor=lightblue, width=0.5, height=0.3];"__end__" [label="__end__", shape=ellipse, style=filled, fillcolor=lightblue, width=0.5, height=0.3];"Supervisor Agent" [label="Supervisor Agent", shape=box, style=filled, fillcolor=lightyellow, width=1.5, height=0.8];"summarize_text" [label="summarize_text", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"classify_sentiment" [label="classify_sentiment", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"get_weather" [label="get_weather", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"__start__" -> "Supervisor Agent";
+        "Supervisor Agent" -> "summarize_text" [style=dotted, penwidth=1.5];
+        "summarize_text" -> "Supervisor Agent" [style=dotted, penwidth=1.5];
+        "Supervisor Agent" -> "classify_sentiment" [style=dotted, penwidth=1.5];
+        "classify_sentiment" -> "Supervisor Agent" [style=dotted, penwidth=1.5];
+        "Supervisor Agent" -> "get_weather" [style=dotted, penwidth=1.5];
+        "get_weather" -> "Supervisor Agent" [style=dotted, penwidth=1.5];"Supervisor Agent" -> "__end__";}
