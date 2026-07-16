@@ -41,6 +41,13 @@ leasing_agent = Agent(
     tools=[get_weather],
 )
 
+finance_agent = Agent(
+    name="finance agent",
+    instructions="Assist with finance inquiries and applications.",
+    handoff_description="If the request is related to maintenance, handoff to the Maintenance agent.",
+    model="gpt-4o-mini",
+)
+
 
 orchestrator_agent = Agent(
     name="Orchestrator agent",
@@ -66,6 +73,7 @@ main_agent = Agent(
         get_weather,
     ],
     model="gpt-4o-mini",
+    handoffs=[finance_agent]
 )
 
 
