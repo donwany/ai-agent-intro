@@ -13,7 +13,7 @@ set_tracing_disabled(True)
 # Refer to https://cookbook.openai.com/articles/gpt-oss/run-locally-ollama for more details.
 # If you prefer using LM Studio, refer to https://cookbook.openai.com/articles/gpt-oss/run-locally-lmstudio
 gpt_oss_model = OpenAIChatCompletionsModel(
-    model="gpt-oss:20b",
+    model="gemma3:1b",
     openai_client=AsyncOpenAI(
         base_url="http://localhost:11434/v1",
         api_key="ollama",
