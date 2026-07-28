@@ -1,6 +1,12 @@
-def main():
-    print("Hello from lesson20!")
+from pydantic_ai import Agent
 
+agent = Agent(  
+  'anthropic:claude-sonnet-4-6',
+  instructions='Be concise, reply with one sentence.',  
+)
 
-if __name__ == "__main__":
-    main()
+result = agent.run_sync('Where does "hello world" come from?')  
+print(result.output)
+"""
+The first known use of "hello, world" was in a 1974 textbook about the C programming language.
+"""
