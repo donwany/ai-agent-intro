@@ -11,4 +11,9 @@ dependencies = [
     "openai-agents[mongodb,viz]>=0.18.0",
     "python-dotenv>=1.2.2",
     "sounddevice>=0.5.5",
+<<<<<<< HEAD
+=======
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+>>>>>>> 3f61f4e (first commit)
 ]
