@@ -12,11 +12,11 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: rag_demo
+      POSTGRES_DB: lauki_demo
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./init:/docker-entrypoint-initdb.d
+      - ./initdb:/docker-entrypoint-initdb.d
 
 volumes:
   postgres_data:

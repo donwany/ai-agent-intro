@@ -48,7 +48,10 @@
 
 ## Create a database
 ```bash
+docker exec -it pgvector-db psql -U postgres
+
 CREATE DATABASE rag_demo;
+CREATE DATABASE lauki_demo;
 
 # connect to it
 \c rag_demo
@@ -57,7 +60,9 @@ CREATE DATABASE rag_demo;
 CREATE EXTENSION IF NOT EXISTS vector;
 
 docker compose up -d
+
 docker exec -it pgvector-db psql -U postgres -d rag_demo
+docker exec -it pgvector-db psql -U postgres -c "\l"
 
 \dx
 
@@ -70,4 +75,33 @@ docker compose down
 | -- | ------------------------------------- | -------------- | ------------ |
 | 1  | Employees receive 20 vacation days... | `[0.123, ...]` | `{"page":1}` |
 | 2  | Employees may work remotely...        | `[0.442, ...]` | `{"page":1}` |
+```
+
+## Lauki Demo
+```
+                lauki_faq.csv
+                      │
+                      ▼
+                 pandas.read_csv()
+                      │
+                      ▼
+              LangChain Documents
+                      │
+                      ▼
+               OpenAI Embeddings
+                      │
+                      ▼
+          PostgreSQL + pgvector
+                      │
+                      ▼
+      similarity_search_with_score()
+                      │
+                      ▼
+      Top-K FAQ Entries + Similarity
+                      │
+                      ▼
+                GPT-4o-mini
+                      │
+                      ▼
+             Final Customer Answer
 ```
