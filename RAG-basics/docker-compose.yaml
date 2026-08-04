@@ -12,7 +12,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: lauki_demo
+      POSTGRES_DB: rag_demo
 
     volumes:
       - postgres_data:/var/lib/postgresql/data

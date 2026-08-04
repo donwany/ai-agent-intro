@@ -62,6 +62,7 @@ CREATE EXTENSION IF NOT EXISTS vector;
 docker compose up -d
 
 docker exec -it pgvector-db psql -U postgres -d rag_demo
+docker exec -it pgvector-db psql -U postgres -d lauki_demo
 docker exec -it pgvector-db psql -U postgres -c "\l"
 
 \dx
